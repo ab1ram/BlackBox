@@ -15,12 +15,13 @@ The project is being built incrementally, with an emphasis on readable code, reu
 - **Integrity verification:** Compare a calculated hash against an expected hash to help identify changes.
 - **Memory-efficient processing:** Read files in chunks instead of loading entire files into memory.
 - **Modular structure:** Keep integrity-related functionality separate from the main application.
+- **Password generation:** Generate random passwords with configurable minimum character counts for uppercase letters, lowercase letters, digits, and symbols.
 
 ### Planned
 
 - **File encryption and decryption:** Protect files using password-based, authenticated encryption.
 - **Secure vault:** Organize and manage protected files.
-- **Password tools:** Generate strong passwords and evaluate password strength.
+- **Password strength evaluation:** Evaluate password strength.
 - **Activity history:** Record relevant application operations.
 - **Graphical interface:** Build a user-friendly interface for managing the application's features.
 
@@ -37,12 +38,15 @@ BlackBox/
 ├── integrity/
 │   ├── __init__.py
 │   └── checksum.py
+├── password_utils/
+│   ├── __init__.py
+│   └── pass_gen.py
 ├── BlackBox.py
 ├── README.md
 └── .gitignore
 ```
 
-The `integrity` package contains the hashing and integrity-checking functionality. `BlackBox.py` is the current application entry point.
+The `integrity` package contains file hashing and integrity-checking functionality. The `password_utils` package contains the password generation module. `BlackBox.py` is the current application entry point.
 
 ## Getting Started
 
@@ -88,6 +92,8 @@ Comparing a newly calculated hash with a previously recorded hash helps detect c
 **In development.**
 
 The initial focus is the file integrity module. Encryption, vault management, password tools, activity history, and the graphical interface are planned extensions.
+
+The file integrity module and password generator module have been implemented. The password generator is currently a standalone module and has not yet been integrated into the main application. Encryption, vault management, password strength evaluation, activity history, and the graphical interface remain planned extensions.
 
 This project is intended for learning and demonstration. It has not yet been validated as a production-grade security application.
 
